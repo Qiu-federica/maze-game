@@ -184,16 +184,6 @@ function initGame() {
 
 
 
-  document.getElementById('slove').addEventListener('click', solveMazeWithAnimation);
-  document.getElementById('backToMenu').addEventListener('click', returnToMenu);
-
-  const restartButtons = document.querySelectorAll('button[onclick*="restart"]');
-  restartButtons.forEach(button => {
-    button.onclick = function () {
-      console.log("点击了重新开始按钮");
-      restartGame();
-    };
-  });
 
 
 }
@@ -621,4 +611,54 @@ function solveMazeWithAnimation() {
 
 
 
-window.onload = initGame;
+document.addEventListener('DOMContentLoaded', () => {
+
+  console.log("DOM is ready");
+
+  const startBtn = document.getElementById('startBtn');
+
+  if (startBtn) {
+    startBtn.addEventListener('click', startGame);
+    console.log("已绑定开始游戏按钮");
+  } else {
+    console.error("错误：找不到开始按钮 (id='startBtn')");
+  }
+
+  // 绑定控制区域的重启按钮
+  const controlRestartBtn = document.getElementById('controlRestartBtn');
+  if (controlRestartBtn) {
+    controlRestartBtn.addEventListener('click', restartGame);
+    console.log("已绑定控制区域重启按钮");
+  } else {
+    console.error("错误：找不到控制区域重启按钮 (id='controlRestartBtn')");
+  }
+
+  // 绑定解决迷宫按钮
+  const solveBtn = document.getElementById('solveBtn');
+  if (solveBtn) {
+    solveBtn.addEventListener('click', solveMazeWithAnimation);
+    console.log("已绑定解决迷宫按钮");
+  } else {
+    console.error("错误：找不到解决按钮 (id='solveBtn')");
+  }
+
+  // 绑定返回菜单按钮
+  const backToMenuBtn = document.getElementById('backToMenu');
+  if (backToMenuBtn) {
+    backToMenuBtn.addEventListener('click', returnToMenu);
+    console.log("已绑定返回菜单按钮");
+  } else {
+    console.error("错误：找不到返回菜单按钮 (id='backToMenu')");
+  }
+
+  // 绑定游戏结束界面的重启按钮
+  const gameOverRestartBtn = document.getElementById('gameOverRestartBtn');
+  if (gameOverRestartBtn) {
+    gameOverRestartBtn.addEventListener('click', restartGame);
+    console.log("已绑定游戏结束重启按钮");
+  } else {
+    console.error("错误：找不到游戏结束重启按钮 (id='gameOverRestartBtn')");
+  }
+
+  console.log("所有事件绑定完成");
+});

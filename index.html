@@ -33,7 +33,7 @@
 
     <div class="menu-content">
       <h1 class="game-title">MAZE</h1>
-      <button class="start-btn" onclick="startGame()">开始游戏</button>
+      <button class="start-btn" id="startBtn">开始游戏</button>
     </div>
   </div>
 
@@ -42,9 +42,9 @@
   <div id="gameScreen" class="screen hidden">
     <div class="container">
 
-      <head>
+      <header>
         <h1>MAZE</h1>
-      </head>
+      </header>
 
 
       <div class="game-info">
@@ -61,7 +61,7 @@
             <h2>congradulation</h2>
             <p>finishi time: <span id="finalTime">00:00</span></p>
             <p>total steps: <span id="finalMoves">0</span></p>
-            <button onclick="restartGame()">restart</button>
+            <button id="gameOverRestartBtn">restart</button>
           </div>
         </div>
       </div>
@@ -73,8 +73,8 @@
 
 
       <div class="controls">
-        <button onclick="restartgame()">restart</button>
-        <button id="slove">slove</button>
+        <button id="controlRestartBtn">restart</button>
+        <button id="solveBtn">solve</button>
         <button id="backToMenu">return</button>
       </div>
 
@@ -96,7 +96,7 @@
 
 
 
-  <script src="src/main.js"></script>
+  <script type="module" src="src/main.js"></script>
 </body>
 
 </html>
